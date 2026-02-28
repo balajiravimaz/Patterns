@@ -1,0 +1,11 @@
+/* @mixin mobile-landscape-height {
+  @media screen and (orientation: landscape) and (max-height: 299px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-height {
+  @media screen and (orientation: landscape) and (min-width: 951px) and (max-height: 550px) {
+    @content;
+  }
+} *//*# sourceMappingURL=media_query.css.map */
