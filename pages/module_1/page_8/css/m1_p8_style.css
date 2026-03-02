@@ -69,6 +69,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   margin: 60px auto;
   overflow: hidden;
 }
+@media (max-width: 950px) and (orientation: landscape) {
+  #section-1 .content-holder {
+    height: calc(100% - 80px);
+  }
+}
 @media (max-width: 1180px) and (min-width: 951px) and (orientation: landscape) {
   #section-1 .content-holder {
     max-width: 100%;
@@ -100,11 +105,6 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 @media screen and (orientation: landscape) and (max-height: 350px) {
   #section-1 .content-holder .col-left .content .content-bg {
     padding-bottom: 0;
-  }
-}
-@media (max-width: 950px) and (orientation: landscape) {
-  #section-1 .content-holder .col-left .content .content-bg {
-    height: calc(100% - 20px);
   }
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style {

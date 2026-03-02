@@ -1970,6 +1970,7 @@ function initSnakeGame() {
     }
 
   })();
+
 }
 
 

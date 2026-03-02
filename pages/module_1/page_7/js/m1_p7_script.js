@@ -89,7 +89,7 @@ function addSectionData() {
       playBtnSounds(_pageData.sections[sectionCnt - 1].replayBtnAudios);
       audioEnd(function () {
         $(".dummy-patch").hide();
-           $(".wrapTextaudio").removeClass("playing")
+        $(".wrapTextaudio").removeClass("playing")
         $(".wrapTextaudio").addClass("paused")
         resetSimulationAudio();
       })
@@ -248,7 +248,7 @@ function addSectionData() {
       //     toggleAudio(el);
       // });
       // _currentAudio = _pageData.sections[sectionCnt - 1].content.flipObjects[0].instAudio;
-     // $(".flipTextAudio").on("click", replayLastAudio);
+      // $(".flipTextAudio").on("click", replayLastAudio);
       // document.querySelector("#info").addEventListener("click", function (event) {
       //   playClickThen();
       //   AudioController.pause();
@@ -435,60 +435,59 @@ function fillNextSlot(value) {
   $(".cup").css("pointer-events", "none");
 
   const wrapper = document.getElementById("f_wrapper") || document.body;
-  const wrapperRect = wrapper.getBoundingClientRect();
-  const scale = wrapperRect.width / wrapper.offsetWidth;
 
   const cupRect = $cup[0].getBoundingClientRect();
   const slotRect = $slot[0].getBoundingClientRect();
+  const wrapperRect = wrapper.getBoundingClientRect();
 
-  // relative positions inside wrapper
-  const startX = (cupRect.left - wrapperRect.left) / scale;
-  const startY = (cupRect.top - wrapperRect.top) / scale;
+  const startX = cupRect.left - wrapperRect.left;
+  const startY = cupRect.top - wrapperRect.top;
 
-  const endX = (slotRect.left - wrapperRect.left) / scale;
-  const endY = (slotRect.top - wrapperRect.top) / scale;
+  const endX = slotRect.left - wrapperRect.left;
+  const endY = slotRect.top - wrapperRect.top;
 
   const $anim = $cup.find("img").clone().css({
     position: "absolute",
     left: startX,
     top: startY,
-    width: cupRect.width / scale,
-    height: cupRect.height / scale,
+    width: cupRect.width,
+    height: cupRect.height,
     zIndex: 9999,
     pointerEvents: "none"
   }).appendTo(wrapper);
 
+
   // animate
   $anim.animate({
-    left: endX,
-    top: endY,
-    width: slotRect.width / scale,
-    height: slotRect.height / scale
-  }, 400, "swing", function () {
+  left: endX,
+  top: endY,
+  width: slotRect.width,
+  height: slotRect.height
+}, 400, "swing", function () {
 
-    $slot
-      .removeClass("empty")
-      .addClass("filled sparkle")
-      .attr("data-value", value)
-      .html(`<img src="${item.img}" alt="${item.value}">`);
+  $slot
+    .removeClass("empty")
+    .addClass("filled sparkle")
+    .attr("data-value", value)
+    .html(`<img src="${item.img}" alt="${item.value}">`);
 
-    $anim.remove();
-    setTimeout(() => $slot.removeClass("sparkle"), 600);
+  $anim.remove();
+  setTimeout(() => $slot.removeClass("sparkle"), 600);
 
-    dataValue.push(value);
-    updateCorrectNextValue();
+  dataValue.push(value);
+  updateCorrectNextValue();
 
-    if ($(".slot.empty").length === 0) {
-      setTimeout(() => {
-        showEndAnimations();
-        playBtnSounds(_pageData.sections[sectionCnt - 1].finalAudio);
-      }, 500);
-      $(".cup").css("pointer-events", "none");
-    } else {
-      renderCups();
-      $(".cup").css("pointer-events", "auto");
-    }
-  });
+  if ($(".slot.empty").length === 0) {
+    setTimeout(() => {
+      showEndAnimations();
+      playBtnSounds(_pageData.sections[sectionCnt - 1].finalAudio);
+    }, 500);
+    $(".cup").css("pointer-events", "none");
+  } else {
+    renderCups();
+    $(".cup").css("pointer-events", "auto");
+  }
+});
 }
 
 
@@ -721,37 +720,37 @@ function resetCupPosition(cup) {
 
 
 function stayPage() {
-    playClickThen();
-    // AudioController.play();
-    
-    // Resume simulation audio if it was playing before popup
-    if (typeof resumeSimulationAudio === 'function') {
-        resumeSimulationAudio();
-    }
-    
-    $("#home-popup").hide();
+  playClickThen();
+  // AudioController.play();
+
+  // Resume simulation audio if it was playing before popup
+  if (typeof resumeSimulationAudio === 'function') {
+    resumeSimulationAudio();
+  }
+
+  $("#home-popup").hide();
 }
 
 function leavePage() {
-    playClickThen();
-    
-     destroyPage7();
-    var audio = document.getElementById("simulationAudio");
-    if (audio) {
-        // Stop audio whether it's playing or paused
-        audio.pause();
-        audio.currentTime = 0;
-    }
-    
-    // Clear the manual pause flag since we're leaving
-    if (typeof isManuallyPaused !== 'undefined') {
-        isManuallyPaused = false;
-    }
-    if (typeof simulationWasPlaying !== 'undefined') {
-        simulationWasPlaying = false;
-    }
-    
-    jumtoPage(5);
+  playClickThen();
+
+  destroyPage7();
+  var audio = document.getElementById("simulationAudio");
+  if (audio) {
+    // Stop audio whether it's playing or paused
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  // Clear the manual pause flag since we're leaving
+  if (typeof isManuallyPaused !== 'undefined') {
+    isManuallyPaused = false;
+  }
+  if (typeof simulationWasPlaying !== 'undefined') {
+    simulationWasPlaying = false;
+  }
+
+  jumtoPage(5);
 }
 
 function jumtoPage(pageNo) {
@@ -886,7 +885,7 @@ function showEndAnimations() {
   console.log("Audio ending");
   pageVisited();
 
- $audio.off("timeupdate").on("timeupdate", function () {
+  $audio.off("timeupdate").on("timeupdate", function () {
     var currentTime = this.currentTime;
     $(".greetingsPop").css("visibility", "visible");
     $(".greetingsPop").css("opacity", "1");
@@ -933,13 +932,13 @@ function replayLastAudio(btn) {
   // 1. RESTART: If audio has finished or isn't loaded
   if (audio.ended || !audio.src || audio.src === "") {
     console.log("Starting Audio Fresh");
-    
+
     // Reset Mute to False (Play with sound)
-    audio.muted = false; 
-    
+    audio.muted = false;
+
     // SHOW patch on start
-    $(".dummy-patch").show(); 
-    
+    $(".dummy-patch").show();
+
     playBtnSounds(audioSource);
     setButtonState(btn, "playing");
 
@@ -958,17 +957,17 @@ function replayLastAudio(btn) {
     console.log("Resuming Sound");
     audio.muted = false;
     setButtonState(btn, "playing");
-    
+
     // SHOW patch because audio is audible now
-    $(".dummy-patch").show(); 
+    $(".dummy-patch").show();
   } else {
     // --- MUTE (SILENT PLAY) ---
     console.log("Muting Sound");
     audio.muted = true;
     setButtonState(btn, "paused");
-    
+
     // HIDE patch because audio is silent (user wants to interact)
-    $(".dummy-patch").hide(); 
+    $(".dummy-patch").hide();
   }
 }
 
@@ -1036,13 +1035,13 @@ function setCSS(sectionCnt) {
     }
   }
 }
-function destroyPage7(){
+function destroyPage7() {
 
   console.log("Destroying Page 7");
 
   /* ---------- STOP AUDIO ---------- */
   const audio = document.getElementById("simulationAudio");
-  if(audio){
+  if (audio) {
     audio.pause();
     audio.currentTime = 0;
     audio.src = "";
@@ -1051,7 +1050,7 @@ function destroyPage7(){
     $(audio).off("timeupdate");
   }
 
-  if(activeAudio){
+  if (activeAudio) {
     activeAudio.pause();
     activeAudio = null;
   }
@@ -1064,19 +1063,19 @@ function destroyPage7(){
   $("#homeBack").off();
 
   /* ---------- CLEAR TIMELINES ---------- */
-  if(_tweenTimeline){
+  if (_tweenTimeline) {
     _tweenTimeline.kill();
     _tweenTimeline = null;
   }
 
-  if(_popTweenTimeline){
+  if (_popTweenTimeline) {
     _popTweenTimeline.kill();
     _popTweenTimeline = null;
   }
 
   /* ---------- CLEAR TIMEOUTS ---------- */
-  let id = setTimeout(()=>{},0);
-  while(id--) clearTimeout(id);
+  let id = setTimeout(() => { }, 0);
+  while (id--) clearTimeout(id);
 
   /* ---------- RESET DATA ---------- */
   currentPattern = null;

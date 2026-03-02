@@ -180,6 +180,10 @@
 							align-items: center;
 							justify-content: center;
 							height: 100%;
+							@include mobile-landscape-height{
+								gap: 5px;
+								max-width: 420px;
+							}
 
 							.btn_holder {
 								width: 50%;
@@ -221,6 +225,10 @@
 										background-image: url(../images/game.png);
 										background-repeat: no-repeat;
 									}
+									@include mobile-landscape-height{
+										width: 320px;
+										height: 50px;
+									}
 								}
 
 								.btn_info {
@@ -242,6 +250,10 @@
 									@include mobile-landscape-big {
 										width: 35px;
 										height: 35px;
+									}
+									@include mobile-landscape-height{
+										width: 25px;
+										height: 25px;
 									}
 								}
 

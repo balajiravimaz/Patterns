@@ -59,19 +59,21 @@
 					position: relative;
 					display: flex;
 					height: 100%;
-						
-					& > .main-text {
+
+					&>.main-text {
 						display: flex !important;
 						align-items: center;
 						justify-content: center;
 						width: calc(100% - 400px);
-						& > h1 {
+
+						&>h1 {
 							position: relative;
 							font-weight: bold;
 							margin-bottom: 1% !important;
 							font-size: 3.5rem;
 							text-align: center;
 							color: #195855 !important;
+
 							span {
 								font-size: 3rem;
 								color: #feb242;
@@ -84,10 +86,11 @@
 						//font-style: italic;
 						display: none !important;
 					}
+
 					.ost-txt {
 						opacity: 0;
 
-						& > p {
+						&>p {
 							// opacity: 0;
 							color: $white;
 
@@ -96,13 +99,14 @@
 						}
 					}
 
-					& > .body {
+					&>.body {
 						position: relative;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
 						align-items: center;
 						width: 100%;
+
 						.dummypatch {
 							position: absolute;
 							width: 100%;
@@ -113,12 +117,12 @@
 							opacity: 0;
 						}
 
-						& > .text-container {
+						&>.text-container {
 							opacity: 0;
 							//padding: 20px;
 							//background: linear-gradient(125deg, rgb(85, 85, 86, 0.3) 48%, rgb(47, 47, 48, 0.3) 100%);
 
-							& > p {
+							&>p {
 								// opacity: 0;
 								color: $white;
 
@@ -138,11 +142,11 @@
 								}
 							}
 
-							& > ul {
+							&>ul {
 								margin-left: 40px;
 								list-style-type: none;
 
-								& > li {
+								&>li {
 									position: relative;
 									font-size: $page-font-size;
 									line-height: 19px;
@@ -163,7 +167,7 @@
 							}
 						}
 
-						& > .image-container {
+						&>.image-container {
 							display: flex;
 							position: relative;
 							flex-direction: column;
@@ -171,6 +175,12 @@
 							align-items: center;
 							justify-content: center;
 							height: 100%;
+
+							@include mobile-landscape-height {
+								gap: 5px;
+								max-width: 420px;
+							}
+
 							.btn_holder {
 								width: 50%;
 								height: 120px;
@@ -178,12 +188,18 @@
 								flex-direction: row;
 								align-items: start;
 								justify-content: end;
-									@include mobile-landscape {
+
+								@include mobile-landscape {
 									width: 64%;
 								}
+
 								@include mobile-landscape-big {
 									width: 64%;
 								}
+								@include mobile-landscape-height{
+									height: 60px;
+								}
+
 								.box {
 									width: 100%;
 									height: 100%;
@@ -192,22 +208,32 @@
 									background-position: center;
 									cursor: pointer;
 									background-color: transparent;
+
 									&:hover {
 										animation: slowInFastOut 0.5s ease-in-out;
 									}
+
 									&#box-1 {
 										background-image: url(../images/shapes.png);
 										background-repeat: no-repeat;
 									}
+
 									&#box-2 {
 										background-image: url(../images/number.png);
 										background-repeat: no-repeat;
 									}
+
 									&#box-3 {
 										background-image: url(../images/game.png);
 										background-repeat: no-repeat;
 									}
+
+									@include mobile-landscape-height {
+										width: 320px;
+										height: 50px;
+									}
 								}
+
 								.btn_info {
 									position: absolute;
 									width: 50px;
@@ -220,17 +246,25 @@
 									background-repeat: no-repeat;
 									cursor: pointer;
 									margin: -7px;
+
 									@include mobile-landscape {
 										width: 35px;
 										height: 35px;
-											margin: -2px;
+										margin: -2px;
 									}
+
 									@include mobile-landscape-big {
 										width: 35px;
 										height: 35px;
 										margin: -2px;
 									}
+
+									@include mobile-landscape-height {
+										width: 25px;
+										height: 25px;
+									}
 								}
+
 								.i-txt-toolTip {
 									position: absolute;
 									background-color: transparent;
@@ -278,6 +312,7 @@
 				}
 			}
 		}
+
 		#introPopup-3 {
 			display: none;
 			opacity: 0;
@@ -319,13 +354,14 @@
 					cursor: pointer;
 					transition: transform 0.5s ease-in-out;
 
-				
+
 					@include mobile-landscape {
 						top: 15px;
 						right: 60px;
 						width: 15px;
 						height: 15px;
 					}
+
 					@include mobile-landscape-big {
 						top: 15px;
 						right: 60px;
@@ -384,6 +420,7 @@
 						top: 20px;
 						left: 45px;
 					}
+
 					@include mobile-landscape-big {
 						width: 20px;
 						height: 20px;
@@ -428,6 +465,7 @@
 			}
 		}
 	}
+
 	.infobtnPopup {
 		display: none;
 		opacity: 0;
@@ -461,6 +499,7 @@
 			@include mobile-landscape {
 				width: 350px;
 			}
+
 			@include mobile-landscape-big {
 				width: 350px;
 			}
@@ -476,7 +515,7 @@
 				cursor: pointer;
 				transition: transform 0.5s ease-in-out;
 
-				
+
 				@include tablet-landscape {
 					right: 100px;
 					top: 20px;
@@ -488,6 +527,7 @@
 					width: 15px;
 					height: 15px;
 				}
+
 				@include mobile-landscape-big {
 					right: 75px;
 					top: 15px;
@@ -540,7 +580,7 @@
 				cursor: pointer;
 				transition: transform 0.5s ease-in-out;
 
-			
+
 				@include tablet-landscape {
 					top: 30px;
 					left: 75px;
@@ -552,6 +592,7 @@
 					height: 20px;
 					left: 60px;
 				}
+
 				@include mobile-landscape-big {
 					top: 30px;
 					width: 20px;

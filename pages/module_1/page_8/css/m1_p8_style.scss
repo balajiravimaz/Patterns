@@ -43,6 +43,9 @@
 		height: calc(100% - 100px);
 		margin: 60px auto;
 		overflow: hidden;
+		@include mobile-landscape-big{
+			height: calc(100% - 80px);
+		}
 
 
 		@include tablet-landscape {
@@ -75,10 +78,7 @@
 					@media screen and (orientation: landscape) and (max-height: 350px) {
 						padding-bottom: 0;
 					}
-
-					@include mobile-landscape-big {
-						height: calc(100% - 20px);
-					}
+					
 
 					.content-style {
 						position: relative;
