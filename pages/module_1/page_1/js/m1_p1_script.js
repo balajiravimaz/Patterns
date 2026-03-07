@@ -62,6 +62,7 @@ function _pageLoaded() {
     
     $('.introInfo').attr('data-popup', 'introPopup-2');
     $("#f_header").find(".music, .introInfo").show();
+    $(".home_btn").attr("data-tooltip", "Home");
 
     addSectionData();
     //assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);

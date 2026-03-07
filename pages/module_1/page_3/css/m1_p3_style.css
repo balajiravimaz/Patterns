@@ -592,7 +592,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   transform: scale(1.125);
 }
 #section-1 .infobtnPopup .popup-content .infoPopAudio.playing {
-  background: url(../images/music.png) no-repeat;
+  background: url(../images/specker.png) no-repeat;
   background-size: contain;
 }
 #section-1 .infobtnPopup .popup-content .infoPopAudio.mute {

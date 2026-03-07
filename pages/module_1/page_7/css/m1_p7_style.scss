@@ -469,7 +469,7 @@
 									}
 
 									@include mobile-landscape-big {
-										gap: 0px;
+										gap: 5px;
 									}
 
 									@include mobile-landscape-height {
@@ -486,11 +486,13 @@
 										justify-content: center;
 
 										@include mobile-landscape {
-											max-height: 120px;
+											max-height: 130px;
 										}
 
 										@include mobile-landscape-big {
 											//max-height: 120px;
+											width: 90%;
+											margin: 0 auto;
 										}
 
 										@include mobile-landscape-height {
