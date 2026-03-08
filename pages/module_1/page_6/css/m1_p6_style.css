@@ -176,7 +176,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   justify-content: center;
   height: 100%;
 }
-@media screen and (orientation: landscape) and (max-height: 390px) {
+@media screen and (orientation: landscape) and (max-height: 400px) {
   #section-1 .content-holder .col-left .content .content-bg > .body > .image-container {
     gap: 5px;
     max-width: 420px;
@@ -200,7 +200,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
     width: 64%;
   }
 }
-@media screen and (orientation: landscape) and (max-height: 390px) {
+@media screen and (orientation: landscape) and (max-height: 400px) {
   #section-1 .content-holder .col-left .content .content-bg > .body > .image-container .btn_holder {
     height: 60px;
   }
@@ -229,7 +229,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background-image: url(../images/game.png);
   background-repeat: no-repeat;
 }
-@media screen and (orientation: landscape) and (max-height: 390px) {
+@media screen and (orientation: landscape) and (max-height: 400px) {
   #section-1 .content-holder .col-left .content .content-bg > .body > .image-container .btn_holder .box {
     width: 320px;
     height: 50px;
@@ -259,7 +259,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
     height: 35px;
   }
 }
-@media screen and (orientation: landscape) and (max-height: 390px) {
+@media screen and (orientation: landscape) and (max-height: 400px) {
   #section-1 .content-holder .col-left .content .content-bg > .body > .image-container .btn_holder .btn_info {
     width: 25px;
     height: 25px;

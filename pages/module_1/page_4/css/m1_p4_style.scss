@@ -647,7 +647,8 @@
 										font-family: 'Times New Roman', Times, serif;
 										white-space: nowrap;
 										z-index: 10;
-										@include mobile-landscape-big{
+
+										@include mobile-landscape-big {
 											font-size: 8px;
 											padding: 3px;
 										}
@@ -1221,6 +1222,13 @@
 									box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 									text-align: center;
 
+									@include mobile-landscape-height-sm {
+										padding: 12px;
+										height: auto;
+										width: 560px;
+										max-height: 270px;
+									}
+
 
 									p {
 										text-align: center;
@@ -1238,6 +1246,9 @@
 									// margin-bottom: 10px;
 									text-align: center;
 									margin: 20px 0;
+									@include mobile-landscape-height-sm{
+										margin: 15px 0;
+									}
 								}
 
 								.modal-question {

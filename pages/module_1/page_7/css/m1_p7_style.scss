@@ -53,6 +53,11 @@
 			margin-top: 55px;
 		}
 
+		@include mobile-landscape-height-sm {
+			margin-top: 50px;
+			height: calc(100% - 75px);
+		}
+
 		.col-left {
 			position: relative;
 			// width: calc(100% - 100px);
@@ -149,6 +154,14 @@
 								background-repeat: no-repeat !important;
 
 								@include mobile-landscape {
+									width: 15px;
+									height: 15px;
+									min-width: 15px;
+									max-width: 15px;
+									top: 0px;
+								}
+
+								@include mobile-landscape-height {
 									width: 15px;
 									height: 15px;
 									min-width: 15px;
@@ -1236,6 +1249,13 @@
 										box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 										text-align: center;
 
+										@include mobile-landscape-height-sm {
+											padding: 12px;
+											height: auto;
+											width: 560px;
+											max-height: 270px;
+										}
+
 										p {
 											text-align: center;
 											margin-bottom: 5px;
@@ -1250,6 +1270,10 @@
 										// margin-bottom: 10px;
 										text-align: center;
 										margin: 20px 0;
+
+										@include mobile-landscape-height-sm {
+											margin: 15px 0;
+										}
 									}
 
 									.modal-question {

@@ -43,7 +43,8 @@
 		height: calc(100% - 100px);
 		margin: 60px auto;
 		overflow: hidden;
-		@include mobile-landscape-big{
+
+		@include mobile-landscape-big {
 			height: calc(100% - 80px);
 		}
 
@@ -78,7 +79,7 @@
 					@media screen and (orientation: landscape) and (max-height: 350px) {
 						padding-bottom: 0;
 					}
-					
+
 
 					.content-style {
 						position: relative;
@@ -1071,6 +1072,13 @@
 									box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 									text-align: center;
 
+									@include mobile-landscape-height-sm {
+										padding: 12px;
+										height: auto;
+										width: 560px;
+										max-height: 270px;
+									}
+
 									p {
 										text-align: center;
 										margin-bottom: 5px;
@@ -1087,6 +1095,10 @@
 									// margin-bottom: 10px;
 									text-align: center;
 									margin: 20px 0;
+
+									@include mobile-landscape-height-sm {
+										margin: 10px 0;
+									}
 								}
 
 								.modal-question {
